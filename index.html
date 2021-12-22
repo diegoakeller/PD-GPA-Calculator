@@ -37,29 +37,29 @@
         var n8 = 0
 
         function calc(x, y) {
-            if (getElementById(x) >= 97) {
+            if (document.getElementById(x) >= 97) {
                 y = 4.333
-            } else if (getElementById(x) >= 93) {
+            } else if (document.getElementById(x) >= 93) {
                 y = 4.000
-            } else if (getElementById(x) >= 90) {
+            } else if (document.getElementById(x) >= 90) {
                 y = 3.667
-            } else if (getElementById(x) >= 87) {
+            } else if (document.getElementById(x) >= 87) {
                 y = 3.333
-            } else if (getElementById(x) >= 83) {
+            } else if (document.getElementById(x) >= 83) {
                 y = 3.000
-            } else if (getElementById(x) >= 80) {
+            } else if (document.getElementById(x) >= 80) {
                 y = 2.667
-            } else if (getElementById(x) >= 77) {
+            } else if (document.getElementById(x) >= 77) {
                 y = 2.333
-            } else if (getElementById(x) >= 73) {
+            } else if (document.getElementById(x) >= 73) {
                 y = 2.000
-            } else if (getElementById(x) >= 70) {
+            } else if (document.getElementById(x) >= 70) {
                 y = 1.677
-            } else if (getElementById(x) >= 67) {
+            } else if (document.getElementById(x) >= 67) {
                 y = 1.333
-            } else if (getElementById(x) >= 63) {
+            } else if (document.getElementById(x) >= 63) {
                 y = 1.000
-            } else if (getElementById(x) >= 60) {
+            } else if (document.getElementById(x) >= 60) {
                 y = 0.667
             } else {
                 y = 0.000
@@ -75,9 +75,9 @@
         calc("p8", n8)
 
         function extra(x, y, z) {
-            if (getElementById(y) == true && getElementById(x) == false) {
+            if (document.getElementById(y) == true && document.getElementById(x) == false) {
                 z += 1.000
-            } else if (getElementById(x) == true && getElementById(y) == false) {
+            } else if (document.getElementById(x) == true && document.getElementById(y) == false) {
                 z += 0.500
             }
             return z
@@ -90,7 +90,7 @@
         extra("h7", "a7", n7)
         extra("h8", "a8", n8)
         var avg = (n1 + n2 + n3 + n4 + n5 + n7 + n8) / 7
-        getElementById("output").innerHTML = "Your Weighted GPA Is " + avg + "!"
+        document.getElementById("output").innerHTML = "Your Weighted GPA Is " + avg + "!"
 
     }
 </script>
