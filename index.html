@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>GPA PD CALC</title>
+    <link rel="icon" href="logo-pds.ico">
+    <meta name="description" content="GPA Calculator">
+    <meta name="keywords" content="GPA Calculator">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+
+<body>
+    <h1>GPA CALCULATOR</h1>
+    <form>
+        <p>Period 1 Grade</p><input type="number" id="p1"><input type="checkbox" id="h1"><input type="checkbox" id="a1">
+        <p>Period 2 Grade</p><input type="number" id="p2"><input type="checkbox" id="h2"><input type="checkbox" id="a2">
+        <p>Period 3 Grade</p><input type="number" id="p3"><input type="checkbox" id="h3"><input type="checkbox" id="a3">
+        <p>Period 4 Grade</p><input type="number" id="p4"><input type="checkbox" id="h4"><input type="checkbox" id="a4">
+        <p>Period 5 Grade</p><input type="number" id="p5"><input type="checkbox" id="h5"><input type="checkbox" id="a5">
+        <p>Period 7 Grade</p><input type="number" id="p7"><input type="checkbox" id="h7"><input type="checkbox" id="a7">
+        <p>Period 8 Grade</p><input type="number" id="p8"><input type="checkbox" id="h8"><input type="checkbox" id="a8">
+    </form>
+    <button onclick="updateScreen()">Click To Compute</button>
+    <p id="output"></p>
+</body>
+<script>
+    function updateScreen() {
+        var n1 = 0
+        var n2 = 0
+        var n3 = 0
+        var n4 = 0
+        var n5 = 0
+        var n7 = 0
+        var n8 = 0
+
+        function calc(x, y) {
+            if (getElementById(x) >= 97) {
+                y = 4.333
+            } else if (getElementById(x) >= 93) {
+                y = 4.000
+            } else if (getElementById(x) >= 90) {
+                y = 3.667
+            } else if (getElementById(x) >= 87) {
+                y = 3.333
+            } else if (getElementById(x) >= 83) {
+                y = 3.000
+            } else if (getElementById(x) >= 80) {
+                y = 2.667
+            } else if (getElementById(x) >= 77) {
+                y = 2.333
+            } else if (getElementById(x) >= 73) {
+                y = 2.000
+            } else if (getElementById(x) >= 70) {
+                y = 1.677
+            } else if (getElementById(x) >= 67) {
+                y = 1.333
+            } else if (getElementById(x) >= 63) {
+                y = 1.000
+            } else if (getElementById(x) >= 60) {
+                y = 0.667
+            } else {
+                y = 0.000
+            }
+            return y
+        }
+        calc("p1", n1)
+        calc("p2", n2)
+        calc("p3", n3)
+        calc("p4", n4)
+        calc("p5", n5)
+        calc("p7", n7)
+        calc("p8", n8)
+
+        function extra(x, y, z) {
+            if (getElementById(y) == true && getElementById(x) == false) {
+                z += 1.000
+            } else if (getElementById(x) == true && getElementById(y) == false) {
+                z += 0.500
+            }
+            return z
+        }
+        extra("h1", "a1", n1)
+        extra("h2", "a2", n2)
+        extra("h3", "a3", n3)
+        extra("h4", "a4", n4)
+        extra("h5", "a5", n5)
+        extra("h7", "a7", n7)
+        extra("h8", "a8", n8)
+        var avg = (n1 + n2 + n3 + n4 + n5 + n7 + n8) / 7
+        getElementById("output").innerHTML = "Your Weighted GPA Is " + avg + "!"
+
+    }
+</script>
+
+</html>
