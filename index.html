@@ -26,46 +26,58 @@
     <button onclick="updateScreen()">Click To Compute</button>
     <p id="output"></p>
 </body>
-<script>
-    function updateScreen() {
-        var n1 = 0
-        var n2 = 0
-        var n3 = 0
-        var n4 = 0
-        var n5 = 0
-        var n7 = 0
-        var n8 = 0
 
-        function calc(x, y) {
-            if (document.getElementById(x) >= 97) {
-                y = 4.333
-            } else if (document.getElementById(x) >= 93) {
-                y = 4.000
-            } else if (document.getElementById(x) >= 90) {
-                y = 3.667
-            } else if (document.getElementById(x) >= 87) {
-                y = 3.333
-            } else if (document.getElementById(x) >= 83) {
-                y = 3.000
-            } else if (document.getElementById(x) >= 80) {
-                y = 2.667
-            } else if (document.getElementById(x) >= 77) {
-                y = 2.333
-            } else if (document.getElementById(x) >= 73) {
-                y = 2.000
-            } else if (document.getElementById(x) >= 70) {
-                y = 1.677
-            } else if (document.getElementById(x) >= 67) {
-                y = 1.333
-            } else if (document.getElementById(x) >= 63) {
-                y = 1.000
-            } else if (document.getElementById(x) >= 60) {
-                y = 0.667
-            } else {
-                y = 0.000
-            }
-            return y
+<script>
+    var n1 = 0
+    var n2 = 0
+    var n3 = 0
+    var n4 = 0
+    var n5 = 0
+    var n7 = 0
+    var n8 = 0
+
+    function calc(x, y) {
+
+        if (document.getElementById(x) >= 97) {
+            y = 4.333
+        } else if (document.getElementById(x) >= 93) {
+            y = 4.000
+        } else if (document.getElementById(x) >= 90) {
+            y = 3.667
+        } else if (document.getElementById(x) >= 87) {
+            y = 3.333
+        } else if (document.getElementById(x) >= 83) {
+            y = 3.000
+        } else if (document.getElementById(x) >= 80) {
+            y = 2.667
+        } else if (document.getElementById(x) >= 77) {
+            y = 2.333
+        } else if (document.getElementById(x) >= 73) {
+            y = 2.000
+        } else if (document.getElementById(x) >= 70) {
+            y = 1.677
+        } else if (document.getElementById(x) >= 67) {
+            y = 1.333
+        } else if (document.getElementById(x) >= 63) {
+            y = 1.000
+        } else if (document.getElementById(x) >= 60) {
+            y = 0.667
+        } else {
+            y = 0.000
         }
+        return y
+    }
+
+    function extra(x, y, z) {
+        if (document.getElementById.checked(y) == true && document.getElementById(x).checked == false) {
+            z += 1.000
+        } else if (document.getElementById(x).checked == true && document.getElementById(y).checked == false) {
+            z += 0.500
+        }
+        return z
+    }
+
+    function updateScreen() {
         calc("p1", n1)
         calc("p2", n2)
         calc("p3", n3)
@@ -73,15 +85,6 @@
         calc("p5", n5)
         calc("p7", n7)
         calc("p8", n8)
-
-        function extra(x, y, z) {
-            if (document.getElementById(y) == true && document.getElementById(x) == false) {
-                z += 1.000
-            } else if (document.getElementById(x) == true && document.getElementById(y) == false) {
-                z += 0.500
-            }
-            return z
-        }
         extra("h1", "a1", n1)
         extra("h2", "a2", n2)
         extra("h3", "a3", n3)
